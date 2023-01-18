@@ -1,0 +1,40 @@
+#PRIMS IN PYTHON
+
+def prims(num,graph):
+    
+    weight=[]
+    vt=[]
+    p = []
+   
+    for i in range(num):
+        weight.append(100000000)
+        vt.append(0)
+        p.append(-1)
+    weight[0]=0
+    
+    for i in range (num):
+        min = 100000000
+        for j in range (num):
+            if (vt[j] == 0 and weight[j] < min):
+                min = weight[j]
+                ver = j
+        vt[ver] = 1
+        
+        for j in range (num):
+            if (graph[ver][j]!=0 and graph[ver][j] < weight[j]):
+                p[j] = ver
+                weight[j] = graph[ver][j]
+        
+    for i in range (1,num):
+        print(i," ",p[i],"   ",weight[i])
+    
+num = 6
+graph = [[0,10,0,0,0,8],
+     [0,0,1,2,0,0],
+     [0,0,0,0,0,0],
+     [0,0,-2,0,0,0],
+     [0,-4,0,-1,0,0],
+     [0,0,0,0,1,0]]
+
+prims(num,graph)
+

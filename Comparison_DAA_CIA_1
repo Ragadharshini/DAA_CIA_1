@@ -1,0 +1,10 @@
+PRIM'S ALGORITHM:
+1)This algorithm begins to construct the shortest spanning tree from any vertex in the graph.
+2)To obtain the minimum distance, it traverses one node more than one time.
+3)The time complexity of Prim’s algorithm is O(V2).
+
+KRUSKAL'S ALGORITHM:
+1)This algorithm begins to construct the shortest spanning tree from the vertex having the lowest weight in the graph.
+2)It crosses one node only one time.
+3)The time complexity of Kruskal’s algorithm is O(E log V).
+

@@ -1,0 +1,47 @@
+
+#KRUSKALS IN PYTHON
+
+def head(x,h):
+    while(h[x]):
+        x = h[x]
+    return x ;
+
+   
+def kruskals(num,graph):  
+    p = [None for i in range (num)]
+    i = 1
+    
+    while(i<num):
+        min = 1000000
+        
+        for j in range (num):
+            p[j]=0
+            
+            for k in range (num):
+                
+                if(graph[j][k]!=0 and graph[j][k] < min):
+                    min = graph[j][k]
+                    a=c=j
+                    b=d=k
+        c = head(c,p)
+        d = head(d,p)
+        
+        if (c != d):
+            p[c] = d
+            print(b," ",a," ",min)
+            i+=1
+        graph[a][b] = 0
+            
+   
+num = 6
+
+graph = [[0,10,0,0,0,8],
+     [0,0,1,2,0,0],
+     [0,0,0,0,0,0],
+     [0,0,-2,0,0,0],
+     [0,-4,0,-1,0,0],
+     [0,0,0,0,1,0]]
+
+print()
+
+kruskals(num,graph)
